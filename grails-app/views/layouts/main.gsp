@@ -1,5 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!doctype html>
-<html lang="en" class="no-js">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -7,15 +8,25 @@
         <g:layoutTitle default="Grails"/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <asset:stylesheet src="/mdb.min.css"/>
+    <asset:stylesheet src="/application.css"/>
 
-    <asset:stylesheet src="application.css"/>
 
+    <asset:javascript src="/mdb.es.min.js"/>
+    <asset:javascript src="/application.js"/>
+    <asset:javascript src="/jquery.js"/>
     <g:layoutHead/>
 </head>
 
 <body>
-
+<div id="loading-spinner" class="d-none text-center">
+    <div class="loading" data-mdb-parent-selector="#loading-spinner">
+        <div class="spinner-border loading-icon" role="status"></div>
+        <span class="loading-text">Loading...</span>
+    </div>
+</div>
 <nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
     <a class="navbar-brand" href="/#"><asset:image src="grails.svg" alt="Grails Logo"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +43,7 @@
 
 <g:layoutBody/>
 
-<div class="footer row" role="contentinfo">
+%{--<div class="footer row" role="contentinfo">
     <div class="col">
         <a href="http://guides.grails.org" target="_blank">
             <asset:image src="advancedgrails.svg" alt="Grails Guides" class="float-left"/>
@@ -57,14 +68,14 @@
         <strong class="centered"><a href="https://grails-slack.cfapps.io" target="_blank">Join the Community</a></strong>
         <p>Get feedback and share your experience with other Grails developers in the community <a href="https://grails-slack.cfapps.io" target="_blank">Slack channel</a>.</p>
     </div>
-</div>
+</div>--}%
 
 
-<div id="spinner" class="spinner" style="display:none;">
+%{--<div id="spinner" class="spinner" style="display:none;">
     <g:message code="spinner.alt" default="Loading&hellip;"/>
 </div>
 
-<asset:javascript src="application.js"/>
+<asset:javascript src="application.js"/>--}%
 
 </body>
 </html>
