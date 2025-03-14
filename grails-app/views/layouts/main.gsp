@@ -4,42 +4,42 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>
-        <g:layoutTitle default="Grails"/>
-    </title>
+    <title>T&T Shop &raquo;<g:layoutTitle default=""/></title>
+    <link rel="shortcut icon" href="${assetPath(src: 'logo/text.png')}" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    %{-- css--}%
     <asset:stylesheet src="/mdb.min.css"/>
     <asset:stylesheet src="/application.css"/>
 
-
-    <asset:javascript src="/mdb.es.min.js"/>
+    %{-- js--}%
+    <asset:javascript src="/mdb.umd.min.js"/>
     <asset:javascript src="/application.js"/>
     <asset:javascript src="/jquery.js"/>
     <g:layoutHead/>
 </head>
 
 <body>
-<div id="loading-spinner" class="d-none text-center">
-    <div class="loading" data-mdb-parent-selector="#loading-spinner">
-        <div class="spinner-border loading-icon" role="status"></div>
-        <span class="loading-text">Loading...</span>
+<div id="loading-spinner">
+    <div class="d-flex flex-column align-items-center">
+        <div class="overlay">
+            <div class="loader"></div>
+            <div class="loading-message">Loading ...</div>
+        </div>
     </div>
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
-    <a class="navbar-brand" href="/#"><asset:image src="grails.svg" alt="Grails Logo"/></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" aria-expanded="false" style="height: 0.8px;" id="navbarContent">
-        <ul class="nav navbar-nav ml-auto">
-            <g:pageProperty name="page.nav"/>
-        </ul>
-    </div>
-
-</nav>
+<div class="header-section">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-static-top header-page" role="navigation">
+        <a class="navbar-brand" href="/home/index"><asset:image src="/logo/logoPage.svg" alt="Grails Logo"/></a>
+    </nav>
+</div>
 
 <g:layoutBody/>
 

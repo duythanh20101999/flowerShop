@@ -2,15 +2,17 @@
 <html>
 <head>
 	<meta name="layout" content="main">
-	<title></title>
+	<title> Home</title>
 </head>
 
 <body>
-Hello world!
+<div class="container-fluid main-content">
+	Hello world!
+</div>
 
 <script type="text/javascript">
 	$(document).ready(function (){
-        showSpinner();
+        hideSpinner();
 	})
 </script>
 </body>
